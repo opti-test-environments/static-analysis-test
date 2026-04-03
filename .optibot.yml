@@ -1,0 +1,19 @@
+# OptiBot Configuration
+# Merge this PR to customise how OptiBot optimises your CI pipelines.
+# Closing it will keep all defaults active.
+#
+# All four optimisation strategies are enabled by default.
+# Set any strategy to `false` to disable it.
+
+strategies:
+  # Cache dependencies between workflow runs to reduce install time
+  add_dependency_cache: true
+
+  # Cancel redundant queued runs when a newer commit is pushed
+  add_concurrency_cancellation: true
+
+  # Skip CI runs for docs-only or non-code changes
+  narrow_workflow_trigger: true
+
+  # Run independent jobs in parallel to reduce total pipeline time
+  parallelize_ci: true
